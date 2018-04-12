@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { RestaurantService } from '../restaurants.service';
 
-import { Restaurant } from './../restaurant/restaurant.model';
+import { Restaurant } from './../../../models/restaurant.model';
 
 @Component({
   selector: 'mt-restaurant-details',
