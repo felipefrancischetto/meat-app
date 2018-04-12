@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MenuItem } from '../../../../models/menu-item.model';
 
 @Component({
-  selector: 'mt-menu-item',
+  selector: 'app-menu-item',
   templateUrl: './menu-item.component.html'
 })
 export class MenuItemComponent implements OnInit {

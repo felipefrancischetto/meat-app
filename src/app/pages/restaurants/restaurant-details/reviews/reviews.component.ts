@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { RestaurantService } from '../../restaurants.service';
 
 @Component({
-  selector: 'mt-reviews',
+  selector: 'app-reviews',
   templateUrl: './reviews.component.html',
 })
 export class ReviewsComponent implements OnInit {

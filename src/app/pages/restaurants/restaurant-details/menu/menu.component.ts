@@ -8,7 +8,7 @@ import { RestaurantService } from '../../restaurants.service';
 import { MenuItem } from '../../../../models/menu-item.model';
 
 @Component({
-  selector: 'mt-menu',
+  selector: 'app-menu',
   templateUrl: './menu.component.html'
 })
 export class MenuComponent implements OnInit {

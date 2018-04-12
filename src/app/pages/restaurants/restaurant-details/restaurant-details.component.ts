@@ -6,7 +6,7 @@ import { RestaurantService } from '../restaurants.service';
 import { Restaurant } from './../../../models/restaurant.model';
 
 @Component({
-  selector: 'mt-restaurant-details',
+  selector: 'app-restaurant-details',
   templateUrl: './restaurant-details.component.html'
 })
 export class RestaurantDetailsComponent implements OnInit {
