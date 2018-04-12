@@ -30,4 +30,8 @@ export class ShoppingCartComponent implements OnInit {
   removeItem(item: any) {
     this.shoppingCartService.removeItem(item);
   }
+
+  clear() {
+    this.shoppingCartService.clear();
+  }
 }
