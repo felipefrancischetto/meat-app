@@ -9,11 +9,10 @@ import { Restaurant } from './../../models/restaurant.model';
 
 import { MEAT_API } from './../../app.api';
 import { ErrorHandler } from './../../app.error-handler';
+import { MenuItem } from '../../models/menu-item.model';
 
 @Injectable()
 export class RestaurantService {
-
-  rests: Restaurant[] = [];
 
   constructor(private http: Http) { }
 
@@ -29,10 +28,17 @@ export class RestaurantService {
       .catch(ErrorHandler.handleError);
   }
 
-  reviewsOfRestaurant(id: string): Observable<Restaurant> {
+  reviewsOfRestaurant(id: string): Observable<any> {
     return this.http.get(`${MEAT_API}/restaurants/${id}/reviews`)
       .map(res => res.json())
       .catch(ErrorHandler.handleError);
   }
+
+  menuOfRestaurant(id: string): Observable<MenuItem[]> {
+    return this.http.get(`${MEAT_API}/restaurants/${id}/menu`)
+    .map(res => res.json())
+    .catch(ErrorHandler.handleError);
+  }
+
 }
 
