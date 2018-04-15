@@ -1,6 +1,9 @@
+import { CartItem } from './../../models/cart-item.model';
 import { Component, OnInit } from '@angular/core';
 
 import { RadioOption } from '../../models/radio-option.model';
+import { OrderService } from './order.service';
+import { CartItem } from '../../models/cart-item.model';
 
 @Component({
   selector: 'app-order',
@@ -8,15 +11,31 @@ import { RadioOption } from '../../models/radio-option.model';
 })
 export class OrderComponent implements OnInit {
 
-  paymentOption: RadioOption[] = [
+  paymentOptions: RadioOption[] = [
     { label: 'Dinheiro', value: 'MON' },
     { label: 'Cartão de Débito', value: 'DEB' },
     { label: 'Cartão de Refeição', value: 'REG' },
   ];
 
-  constructor() { }
+  constructor(private orderService: OrderService) { }
 
   ngOnInit() {
+  }
+
+  cartItems() {
+    return this.orderService.cartItems();
+  }
+
+  increaseQty(item: CartItem) {
+    this.orderService.increaseQty(item);
+  }
+
+  decreaseQty(item: CartItem) {
+    this.orderService.decreaseQty(item);
+  }
+
+  remove(item: CartItem) {
+    this.orderService.remove(item);
   }
 
 }

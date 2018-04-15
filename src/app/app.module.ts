@@ -22,6 +22,8 @@ import { ShoppingCartService } from './pages/restaurants/restaurant-details/shop
 import { OrderComponent } from './pages/order/order.component';
 import { InputComponent } from './shared/components/input/input.component';
 import { RadioComponent } from './shared/components/radio/radio.component';
+import { OrderItemsComponent } from './pages/order/order-items/order-items.component';
+import { OrderService } from './pages/order/order.service';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { RadioComponent } from './shared/components/radio/radio.component';
     OrderComponent,
     InputComponent,
     RadioComponent,
+    OrderItemsComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ import { RadioComponent } from './shared/components/radio/radio.component';
   providers: [
     RestaurantService,
     ShoppingCartService,
+    OrderService,
   ],
   bootstrap: [AppComponent]
 })
