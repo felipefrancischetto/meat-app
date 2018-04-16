@@ -11,6 +11,8 @@ import { CartItem } from '../../models/cart-item.model';
 })
 export class OrderComponent implements OnInit {
 
+  delivery = 8;
+
   paymentOptions: RadioOption[] = [
     { label: 'Dinheiro', value: 'MON' },
     { label: 'Cartão de Débito', value: 'DEB' },
