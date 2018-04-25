@@ -370,5 +370,60 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "",
+      "number": "",
+      "optionalAddress": "",
+      "paymentOption": "",
+      "orderItems": [],
+      "id": 1
+    },
+    {
+      "address": "",
+      "number": "",
+      "optionalAddress": "",
+      "paymentOption": "",
+      "orderItems": [],
+      "id": 2
+    },
+    {
+      "address": "asdsadadas",
+      "number": "65161",
+      "optionalAddress": "1231321",
+      "paymentOption": "REG",
+      "orderItems": [
+        {
+          "quantity": 5,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 2,
+          "menuId": "donut"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "address": "Rua Fernando Lourenço",
+      "number": "2131",
+      "optionalAddress": "asdsada",
+      "paymentOption": "REG",
+      "orderItems": [
+        {
+          "quantity": 4,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        },
+        {
+          "quantity": 1,
+          "menuId": "bread"
+        }
+      ],
+      "id": 4
+    }
+  ]
 }

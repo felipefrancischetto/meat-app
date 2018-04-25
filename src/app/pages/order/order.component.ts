@@ -1,9 +1,10 @@
-import { CartItem } from './../../models/cart-item.model';
 import { Component, OnInit } from '@angular/core';
 
 import { RadioOption } from '../../models/radio-option.model';
 import { OrderService } from './order.service';
 import { CartItem } from '../../models/cart-item.model';
+import { Order, OrderItem } from '../../models/order.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -19,9 +20,16 @@ export class OrderComponent implements OnInit {
     { label: 'Cartão de Refeição', value: 'REG' },
   ];
 
-  constructor(private orderService: OrderService) { }
+  constructor(
+    private orderService: OrderService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  itemsValue(): number {
+    return this.orderService.itemsValue();
   }
 
   cartItems() {
@@ -38,6 +46,16 @@ export class OrderComponent implements OnInit {
 
   remove(item: CartItem) {
     this.orderService.remove(item);
+  }
+
+  checkOrder(order: Order) {
+    order.orderItems = this.cartItems()
+      .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id));
+    this.orderService.checkOrder(order).subscribe((orderId: string) => {
+      this.router.navigate(['/order-summary']);
+      console.log(`Compra concluída ${orderId}`);
+      this.orderService.clear();
+    });
   }
 
 }

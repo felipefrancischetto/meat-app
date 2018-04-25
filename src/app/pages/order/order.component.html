@@ -5,11 +5,6 @@
 <section class="content">
   <section class="invoice">
 
-    <pre>
-      {{ form.valid | json }} {{ form.value | json }}
-    </pre>
-
-
     <form #form="ngForm" novalidate>
       <div class="row">
         <div class="col-xs-12">
@@ -35,7 +30,7 @@
         </div>
         <div class="col-sm-4 col-xs-6">
           <app-input>
-            <input type="text" class="form-control" name="optional" ngModel placeholder="Complemento">
+            <input type="text" class="form-control" name="optionalAddress" ngModel placeholder="Complemento">
           </app-input>
         </div>
         </div>
@@ -64,20 +59,23 @@
           <div class="col-sm-6 col-xs-12">
             <p class="lead">Frete e Total:</p>
 
-            <app-delivery-costs[delivery]="delivery"></app-delivery-costs>
+            <app-delivery-costs
+              [delivery]="delivery"
+              [itemsValue]="itemsValue()"></app-delivery-costs>
           </div>
 
         </div>
 
     </form>
 
+    <!-- disabled="!form.valid && cardItems().length === 0" -->
     <div class="row">
       <div class="col-xs-12">
-        <a href="order-summary.html" disabled="!form.valid" class="btn btn-success pull-right">
+        <button class="btn btn-success pull-right" (click)="checkOrder(form.value)">
           <i class="fa fa-credit-card"></i> Concluir Pedido
-        </a>
+        </button>
       </div>
     </div>
 
   </section>
-</section>
+</section>s

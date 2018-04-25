@@ -12,8 +12,7 @@ export class DeliveryCostsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   total(): number {
     return this.delivery + this.itemsValue;
